@@ -1,0 +1,85 @@
+/* Full CSS from earlier */
+:root{
+  --bg:#fff7fb;
+  --accent:#f36b9b;
+  --muted:#7b6f7b;
+  --card:#ffffff;
+  --glass: rgba(255,255,255,0.6);
+  --shadow: 0 8px 24px rgba(15,15,15,0.08);
+  --radius:16px;
+  --max:1200px;
+  --container-padding:24px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:linear-gradient(180deg,var(--bg),#fff);
+  color:#2b2b2b;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:40px var(--container-padding);} 
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#ffd6e8,#ff9ecf);display:flex;align-items:center;justify-content:center;font-family:'Montserrat';font-weight:700;color:#fff}
+.brand h1{margin:0;font-size:18px}
+.navlinks{display:flex;gap:18px;align-items:center}
+.navlinks a{color:var(--muted);text-decoration:none;font-weight:600}
+.cta{background:var(--accent);color:#fff;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:600;box-shadow:var(--shadow)}
+
+.menu-btn{display:none;background:none;border:0;font-size:20px}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;margin-bottom:48px}
+.hero-left h2{font-family:'Montserrat';font-size:36px;margin:0 0 12px}
+.lead{color:var(--muted);margin-bottom:20px}
+.shop-btn{display:inline-block;background:transparent;border:2px solid var(--accent);color:var(--accent);padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none}
+.hero-right{background:#fff;padding:18px;border-radius:20px;box-shadow:var(--shadow)}
+
+/* Product grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.card{background:var(--card);border-radius:14px;padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+.card h3{margin:0;font-size:16px}
+.price{font-weight:700;color:var(--accent)}
+.add{margin-top:auto;padding:8px 10px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),#ff8ab0);color:#fff;font-weight:700;cursor:pointer}
+
+/* ABOUT / TESTIMONIALS */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.about{background:var(--glass);padding:20px;border-radius:14px}
+.testi{padding:20px}
+.testimonial{background:#fff;padding:16px;border-radius:12px;box-shadow:var(--shadow)}
+
+/* CONTACT */
+.contact{margin-top:36px;background:#fff;padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
+input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #eee;margin-bottom:12px;font-family:inherit}
+.send{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:0;font-weight:700}
+
+/* FOOTER */
+footer{margin-top:36px;padding:22px 0;color:var(--muted);text-align:center}
+
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:40}
+.modal-box{max-width:720px;width:100%;background:#fff;border-radius:14px;padding:20px;box-shadow:0 30px 60px rgba(10,10,10,0.25);position:relative}
+.modal-close{position:absolute;right:14px;top:12px;border:0;background:none;font-size:20px;cursor:pointer}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .two{grid-template-columns:1fr}
+  .navlinks{display:none}
+  .menu-btn{display:inline-block}
+}
+@media (max-width:560px){
+  .grid{grid-template-columns:1fr}
+  .wrap{padding:20px 16px}
+}
